@@ -5,7 +5,6 @@ const Header = styled.header`
   justify-content: center;
   align-items: center;
   height: 10vh;
-  background-color: white;
   color: black;
   font-size: 1.5rem;
   font-family: 'Arial', sans-serif;
@@ -17,7 +16,6 @@ const Footer = styled.footer`
   justify-content: center;
   align-items: center;
   height: 10vh;
-  background-color: white;
   color: black;
   font-size: 1rem;
   font-family: 'Arial', sans-serif;
@@ -32,6 +30,9 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 80vh;
+  margin: 0 2rem;
+  border-radius: 10px;
+  background-color: #f0f0f0; // Provisional
 `;
 
 const Button = styled.button`

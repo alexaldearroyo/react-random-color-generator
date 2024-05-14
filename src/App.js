@@ -79,7 +79,7 @@ export default function App() {
       </Header>
       <Container bgColor={bgColor}>
         {!!generatedColor && <Text>Generated Color: {generatedColor}</Text>}
-        <Button onClick={generateRandomColor}>Generate Random Color</Button>
+        <Button onClick={generateRandomColor}>Generate</Button>
       </Container>
       <Footer>
         <p>Alex Arroyo © 2023</p>

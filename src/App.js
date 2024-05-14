@@ -64,12 +64,12 @@ const Text = styled.p`
 
 export default function App() {
   const [bgColor, setBgColor] = useState('#f0f0f0');
-  const [showText, setShowText] = useState(false);
+  const [generatedColor, setGeneratedColor] = useState('');
 
   const generateRandomColor = () => {
     const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
     setBgColor(randomColor);
-    setShowText(true);
+    setGeneratedColor(randomColor);
   };
 
   return (
@@ -78,7 +78,7 @@ export default function App() {
         <p>React Random Color Generator</p>
       </Header>
       <Container bgColor={bgColor}>
-        {showText && <Text>Generated Color: </Text>}
+        {!!generatedColor && <Text>Generated Color: {generatedColor}</Text>}
         <Button onClick={generateRandomColor}>Generate Random Color</Button>
       </Container>
       <Footer>

@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Header = styled.header`
@@ -32,7 +33,7 @@ const Container = styled.div`
   height: 80vh;
   margin: 0 2rem;
   border-radius: 10px;
-  background-color: #f0f0f0; // Provisional
+  background-color: ${(props) => props.bgColor};
 `;
 
 const Button = styled.button`
@@ -55,14 +56,27 @@ const Button = styled.button`
   }
 `;
 
+const Text = styled.p`
+  margin-top: -20px;
+  font-size: 1.2rem;
+  color: black;
+`;
+
 export default function App() {
+  const [bgColor, setBgColor] = useState('#f0f0f0');
+
+  const generateRandomColor = () => {
+    const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    setBgColor(randomColor);
+  };
+
   return (
     <div className="App">
       <Header>
         <p>React Random Color Generator</p>
       </Header>
-      <Container>
-        <Button>Generate Random Color</Button>
+      <Container bgColor={bgColor}>
+        <Button onClick={generateRandomColor}>Generate Random Color</Button>
       </Container>
       <Footer>
         <p>Alex Arroyo © 2023</p>

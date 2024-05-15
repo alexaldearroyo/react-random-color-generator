@@ -1,3 +1,4 @@
+import randomColor from 'randomcolor';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
@@ -46,16 +47,11 @@ const Button = styled.button`
 `;
 
 export default function App() {
-  const initialColor = '#f0f0f0';
-  const [bgColor, setBgColor] = useState(initialColor);
-  const [generatedColor, setGeneratedColor] = useState(initialColor);
+  const [bgColor, setBgColor] = useState(randomColor());
 
   const generateRandomColor = () => {
-    const randomColor = `#${Math.floor(Math.random() * 16777215)
-      .toString(16)
-      .padStart(6, '0')}`;
-    setBgColor(randomColor);
-    setGeneratedColor(randomColor);
+    const newColor = randomColor();
+    setBgColor(newColor);
   };
 
   return (
@@ -76,7 +72,7 @@ export default function App() {
         }}
       >
         <div style={{ fontSize: '1.2rem', color: 'black' }}>
-          Generated Color: {generatedColor}
+          Generated Color: {bgColor}
         </div>
         <Button onClick={generateRandomColor}>Generate</Button>
       </div>

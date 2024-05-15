@@ -78,7 +78,9 @@ export default function App() {
         <p>React Random Color Generator</p>
       </Header>
       <Container bgColor={bgColor}>
-        <Text>Generated Color: {generatedColor}</Text>
+        <div>
+          <Text>Generated Color: {generatedColor}</Text>
+        </div>
         <Button onClick={generateRandomColor}>Generate</Button>
       </Container>
       <Footer>

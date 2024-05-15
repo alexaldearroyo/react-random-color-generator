@@ -61,7 +61,8 @@ export default function App() {
   const [bgColor, setBgColor] = useState(randomColor());
 
   const generateRandomColor = () => {
-    const newColor = randomColor({ luminosity: 'random', format: 'hex' });
+    const newColor = randomColor({ format: 'hex' });
+    console.log('Generated Color:', newColor);
     setBgColor(newColor);
   };
 
@@ -82,4 +83,3 @@ export default function App() {
     </div>
   );
 }
-``;

@@ -58,6 +58,15 @@ const Button = styled.button`
   }
 `;
 
+const ColorBox = styled.div`
+  font-size: 1.2rem;
+  color: black;
+  background-color: ${(props) => props.bgColor};
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+`;
+
 // APP COMPONENT
 export default function App() {
   const [bgColor, setBgColor] = useState(randomColor());
@@ -74,15 +83,7 @@ export default function App() {
         <p>React Random Color Generator</p>
       </Header>
       <Container bgColor={bgColor}>
-        <div
-          style={{
-            fontSize: '1.2rem',
-            color: 'black',
-            backgroundColor: bgColor,
-          }}
-        >
-          Generated Color: {bgColor}
-        </div>
+        <ColorBox bgColor={bgColor}>Generated Color: {bgColor}</ColorBox>
         <Button onClick={generateRandomColor}>Generate</Button>
       </Container>
       <Footer>

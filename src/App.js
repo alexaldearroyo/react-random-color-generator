@@ -77,12 +77,21 @@ export default function App() {
       <Header>
         <p>React Random Color Generator</p>
       </Header>
-      <Container bgColor={bgColor}>
-        <div>
-          <Text>Generated Color: {generatedColor}</Text>
-        </div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '80vh',
+          margin: '0 2rem',
+          borderRadius: '10px',
+          backgroundColor: bgColor,
+        }}
+      >
+        <Text>Generated Color: {generatedColor}</Text>
         <Button onClick={generateRandomColor}>Generate</Button>
-      </Container>
+      </div>
       <Footer>
         <p>Alex Arroyo © 2023</p>
       </Footer>

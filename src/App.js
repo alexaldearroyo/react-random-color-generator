@@ -26,6 +26,17 @@ const Footer = styled.footer`
   bottom: 0;
 `;
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  margin: 0 2rem;
+  border-radius: 10px;
+  background-color: ${(props) => props.bgColor};
+`;
+
 const Button = styled.button`
   margin-top: 20px;
   padding: 10px 20px;
@@ -59,23 +70,12 @@ export default function App() {
       <Header>
         <p>React Random Color Generator</p>
       </Header>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '80vh',
-          margin: '0 2rem',
-          borderRadius: '10px',
-          backgroundColor: bgColor,
-        }}
-      >
+      <Container bgColor={bgColor}>
         <div style={{ fontSize: '1.2rem', color: 'black' }}>
           Generated Color: {bgColor}
         </div>
         <Button onClick={generateRandomColor}>Generate</Button>
-      </div>
+      </Container>
       <Footer>
         <p>Alex Arroyo © 2023</p>
       </Footer>

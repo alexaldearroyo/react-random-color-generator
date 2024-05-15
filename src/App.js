@@ -45,12 +45,6 @@ const Button = styled.button`
   }
 `;
 
-// const Text = styled.p`
-//   margin-top: -20px;
-//   font-size: 1.2rem;
-//   color: black;
-// `;
-
 export default function App() {
   const initialColor = '#f0f0f0';
   const [bgColor, setBgColor] = useState(initialColor);

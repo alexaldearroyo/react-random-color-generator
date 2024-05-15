@@ -25,17 +25,6 @@ const Footer = styled.footer`
   bottom: 0;
 `;
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
-  margin: 0 2rem;
-  border-radius: 10px;
-  background-color: ${(props) => props.bgColor};
-`;
-
 const Button = styled.button`
   margin-top: 20px;
   padding: 10px 20px;
@@ -56,11 +45,11 @@ const Button = styled.button`
   }
 `;
 
-const Text = styled.p`
-  margin-top: -20px;
-  font-size: 1.2rem;
-  color: black;
-`;
+// const Text = styled.p`
+//   margin-top: -20px;
+//   font-size: 1.2rem;
+//   color: black;
+// `;
 
 export default function App() {
   const [bgColor, setBgColor] = useState('#f0f0f0');
@@ -91,7 +80,10 @@ export default function App() {
           backgroundColor: bgColor,
         }}
       >
-        <Text>Generated Color: {generatedColor}</Text>
+        {/* Make sure text is visible */}
+        <p style={{ fontSize: '1.2rem', color: 'black' }}>
+          Generated Color: {generatedColor}
+        </p>
         <Button onClick={generateRandomColor}>Generate</Button>
       </div>
       <Footer>

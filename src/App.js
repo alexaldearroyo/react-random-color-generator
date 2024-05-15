@@ -81,9 +81,9 @@ export default function App() {
           backgroundColor: bgColor,
         }}
       >
-        <p style={{ fontSize: '1.2rem', color: 'black' }}>
+        <div style={{ fontSize: '1.2rem', color: 'black' }}>
           Generated Color: {generatedColor}
-        </p>
+        </div>
         <Button onClick={generateRandomColor}>Generate</Button>
       </div>
       <Footer>

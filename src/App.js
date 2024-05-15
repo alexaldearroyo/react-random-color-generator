@@ -52,8 +52,9 @@ const Button = styled.button`
 // `;
 
 export default function App() {
-  const [bgColor, setBgColor] = useState('#f0f0f0');
-  const [generatedColor, setGeneratedColor] = useState('');
+  const initialColor = '#f0f0f0';
+  const [bgColor, setBgColor] = useState(initialColor);
+  const [generatedColor, setGeneratedColor] = useState(initialColor);
 
   const generateRandomColor = () => {
     const randomColor = `#${Math.floor(Math.random() * 16777215)
@@ -80,7 +81,6 @@ export default function App() {
           backgroundColor: bgColor,
         }}
       >
-        {/* Make sure text is visible */}
         <p style={{ fontSize: '1.2rem', color: 'black' }}>
           Generated Color: {generatedColor}
         </p>
